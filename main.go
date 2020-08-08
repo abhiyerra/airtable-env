@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/brianloveswords/airtable"
 	flag "github.com/spf13/pflag"
 )
@@ -24,12 +25,11 @@ func init() {
 	flag.StringVar(&airtableConfig.ApiKey, "api-key", "", "Airtable API Key")
 	flag.StringVar(&airtableConfig.BaseKey, "base", "", "Airtable Base Key")
 	flag.StringVar(&airtableConfig.Table, "table", "", "Airtable Table Name")
-	flag.StringVar(&airtableConfig.Table, "key-field", "", "Airtable Key Field Name")
-	flag.StringVar(&airtableConfig.Table, "value-field", "", "Airtable Value Field Name")
+	flag.StringVar(&airtableConfig.KeyField, "key", "", "Airtable Key Field Name")
+	flag.StringVar(&airtableConfig.ValueField, "value", "", "Airtable Value Field Name")
 	flag.StringVar(&airtableConfig.View, "view", "", "Airtable Table View")
 }
 
-// tablenv --api --base -- table --key-field --value-field
 func main() {
 	flag.Parse()
 
@@ -41,7 +41,10 @@ func main() {
 	table := client.Table(airtableConfig.Table)
 	records := []Record{}
 	table.List(&records, &airtable.Options{
-		Fields: []string{airtableConfig.KeyField, airtableConfig.ValueField},
+		Fields: []string{
+			airtableConfig.KeyField,
+			airtableConfig.ValueField,
+		},
 	})
 
 	for _, r := range records {
