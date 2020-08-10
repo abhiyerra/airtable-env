@@ -13,8 +13,13 @@ eval $(airtable-env <api-key> <base-key> <table> <view> <key-field> <value-field
 
 ## Why?
 
-Because you are a cheap bastard who doesn't want to pay for AWS Secrets
-Manager.
+There are many benefits to using Airtable to store secrets:
+
+ - Pretty good ACL
+ - Changelog and Comments List
+ - Easy to update
+ - Free Plan is Great
+
 
 # Release
 
