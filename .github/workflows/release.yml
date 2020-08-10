@@ -30,12 +30,12 @@ jobs:
           - os: ubuntu-latest
             artifact_name: airtable-env
             asset_name: airtable-env-linux-amd64
-          # - os: windows-latest
-          #   artifact_name:  airtable-env.exe
-          #   asset_name: airtable-env-windows-amd64
-          # - os: macos-latest
-          #   artifact_name: airtable-env
-          #   asset_name: airtable-env-macos-amd64
+          - os: windows-latest
+            artifact_name:  airtable-env.exe
+            asset_name: airtable-env-windows-amd64
+          - os: macos-latest
+            artifact_name: airtable-env
+            asset_name: airtable-env-macos-amd64
     steps:
     - uses: actions/checkout@v2
     - name: Build
