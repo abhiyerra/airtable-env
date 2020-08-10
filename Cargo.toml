@@ -2,6 +2,7 @@
 name = "airtable-env"
 description = "Use Airtable for Environment Variables"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/abhiyerra/airtable-env"
 version = "0.1.0"
 authors = ["Abhi Yerra <abhi@berkeley.edu>"]
 edition = "2018"
