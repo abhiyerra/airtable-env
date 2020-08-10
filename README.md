@@ -15,3 +15,10 @@ eval $(airtable-env <api-key> <base-key> <table> <view> <key-field> <value-field
 
 Because you are a cheap bastard who doesn't want to pay for AWS Secrets
 Manager.
+
+# Release
+
+```
+cargo install cargo-release
+cargo release
+```
