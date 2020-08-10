@@ -21,10 +21,12 @@ pub async fn main() {
         .unwrap();
 
     records.iter().enumerate().for_each(|(_, record)| {
-        println!(
-            "export '{}'='{}'",
-            record.fields[&args.key_field].as_str().unwrap(),
-            record.fields[&args.value_field].as_str().unwrap()
-        )
+        match record.fields[&args.key_field].as_str() {
+            Some(key) => match record.fields[&args.value_field].as_str() {
+                Some(value) => println!("export '{}'='{}'", key, value),
+                None => (),
+            },
+            None => (),
+        }
     })
 }
