@@ -22,6 +22,7 @@ jobs:
           release_name: Release ${{ github.ref }}
   build_release:
     name: Publish for ${{ matrix.os }}
+    needs: create_release
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
