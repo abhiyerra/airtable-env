@@ -21,7 +21,7 @@ pub async fn main() {
         .unwrap();
 
     records.iter().enumerate().for_each(|(_, record)| {
-        println!("{}={}",
+        println!("export '{}'='{}'",
             record.fields[&args.key_field].as_str().unwrap(),
             record.fields[&args.value_field].as_str().unwrap())
     })

@@ -5,5 +5,8 @@ Use Airtable to host your Environment Variables.
 ## Usage
 
 ```
-tablenv --api <api_key> --base <base_key> --table <table_name> --key <key_column_key> --value <value_column_key>
+eval $(airtable-env <api-key> <base-key> <table> <view> <key-field> <value-field>)
 ```
+
+ - key-field is the field holding the key name
+ - value-field is teh field holding the value name
