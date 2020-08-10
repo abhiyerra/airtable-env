@@ -1,5 +1,5 @@
-use structopt::StructOpt;
 use airtable_api::Airtable;
+use structopt::StructOpt;
 
 #[derive(StructOpt)]
 struct Cli {
@@ -21,8 +21,10 @@ pub async fn main() {
         .unwrap();
 
     records.iter().enumerate().for_each(|(_, record)| {
-        println!("export '{}'='{}'",
+        println!(
+            "export '{}'='{}'",
             record.fields[&args.key_field].as_str().unwrap(),
-            record.fields[&args.value_field].as_str().unwrap())
+            record.fields[&args.value_field].as_str().unwrap()
+        )
     })
 }
